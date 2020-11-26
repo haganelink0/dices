@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "f8462db5-65ae-49d8-821b-02053059181e",
+		"name": "DiceGame",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/v1/players",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/players",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"players"
+					]
+				},
+				"description": "Get all players"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/players/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/players/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"players",
+						"1"
+					]
+				},
+				"description": "Get player by Id."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/players",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": 3,\r\n    \"name\": \"Laura\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v1/players",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"players"
+					]
+				},
+				"description": "Save a player on the bdd"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/players/1?newName=paco",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/players/1?newName=paco",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"players",
+						"1"
+					],
+					"query": [
+						{
+							"key": "newName",
+							"value": "paco"
+						}
+					]
+				},
+				"description": "change name"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/players/ranking",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/players/ranking",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"players",
+						"ranking"
+					]
+				},
+				"description": "Get Average winrate of all players"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/players/ranking/loser",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/players/ranking/loser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"players",
+						"ranking",
+						"loser"
+					]
+				},
+				"description": "gets the player with the lowesst winrate."
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v1/players/ranking/winner",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v1/players/ranking/winner",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v1",
+						"players",
+						"ranking",
+						"winner"
+					]
+				},
+				"description": "get the player with the highest winrate"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v2/players/3/games",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n            \"gameId\": 6,\r\n            \"firstDice\": 6,\r\n            \"secondDice\": 1\r\n        }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/v2/players/3/games",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v2",
+						"players",
+						"3",
+						"games"
+					]
+				},
+				"description": "add a new game"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/api/v2/players/3/games",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/v2/players/3/games",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"v2",
+						"players",
+						"3",
+						"games"
+					]
+				},
+				"description": "Get all the games from a player"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
