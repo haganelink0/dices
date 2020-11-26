@@ -5,7 +5,6 @@ import com.itacademy.dices.dto.Game;
 import com.itacademy.dices.dto.Result;
 
 import javax.persistence.*;
-import java.util.Random;
 
 @Entity
 @Table(name="games")
@@ -76,13 +75,12 @@ public class GameResponse implements Game {
     }
 
     public void setUser(UserResponse user) {
-        this.user = user;
+        if (this.user != null) {
+            this.user.removeGame(this);
+            this.user = user;
+            this.user.addGame(this);
+        }
     }
 
-    //makes sure the game is properly created and gives 0-1 response to account for winrate
-    @Override
-    public Integer resolveGame() {
-        Integer temporalResult = 0;
-        return temporalResult;
-    }
+
 }

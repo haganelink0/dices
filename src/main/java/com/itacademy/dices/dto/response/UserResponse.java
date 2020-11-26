@@ -23,7 +23,7 @@ public class UserResponse {
     @CreatedDate
     private Date registrationDate;
 
-    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = { CascadeType.ALL})
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.PERSIST, orphanRemoval=true)
     private List<GameResponse> gameList;
     
     @Column(name = "winrate")
@@ -76,4 +76,15 @@ public class UserResponse {
     public void setGameList(List<GameResponse> gameList) {
         this.gameList = gameList;
     }
+
+    public void addGame(GameResponse game) {
+        gameList.add(game);
+    }
+
+    public void removeGame(GameResponse game) {
+        gameList.remove(game);
+    }
+
+
+
 }

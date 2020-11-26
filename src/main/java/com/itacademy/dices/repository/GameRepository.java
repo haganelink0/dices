@@ -11,4 +11,5 @@ public interface GameRepository extends JpaRepository<GameResponse, Integer> {
 
     List<GameResponse> findByUserId(Integer id);
 
+
 }
